@@ -10,8 +10,8 @@ namespace Space_Game
         }
         public override void Draw()
         {
-            Game.Buffer.Graphics.DrawLine(Pens.RoyalBlue, Pos.X, Pos.Y, Pos.X + Size.Width, Pos.Y + Size.Height);
-            Game.Buffer.Graphics.DrawLine(Pens.RoyalBlue, Pos.X + Size.Width, Pos.Y, Pos.X, Pos.Y + Size.Height);
+            Game.Buffer.Graphics.DrawLine(Pens.Red, Pos.X, Pos.Y, Pos.X + Size.Width, Pos.Y + Size.Height);
+            Game.Buffer.Graphics.DrawLine(Pens.Red, Pos.X + Size.Width, Pos.Y, Pos.X, Pos.Y + Size.Height);
         }
 
         public override void Update()

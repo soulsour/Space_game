@@ -1,0 +1,9 @@
+E:\Code\GeekBrains\C_sharp_2\Space_game\Space_Game\bin\Debug\Space_Game.exe.config
+E:\Code\GeekBrains\C_sharp_2\Space_game\Space_Game\bin\Debug\Space_Game.exe
+E:\Code\GeekBrains\C_sharp_2\Space_game\Space_Game\bin\Debug\Space_Game.pdb
+E:\Code\GeekBrains\C_sharp_2\Space_game\Space_Game\obj\Debug\Space_Game.csprojResolveAssemblyReference.cache
+E:\Code\GeekBrains\C_sharp_2\Space_game\Space_Game\obj\Debug\Space_Game.Properties.Resources.resources
+E:\Code\GeekBrains\C_sharp_2\Space_game\Space_Game\obj\Debug\Space_Game.csproj.GenerateResource.Cache
+E:\Code\GeekBrains\C_sharp_2\Space_game\Space_Game\obj\Debug\Space_Game.csproj.CoreCompileInputs.cache
+E:\Code\GeekBrains\C_sharp_2\Space_game\Space_Game\obj\Debug\Space_Game.exe
+E:\Code\GeekBrains\C_sharp_2\Space_game\Space_Game\obj\Debug\Space_Game.pdb
