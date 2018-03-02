@@ -45,6 +45,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ICollision.cs" />
+    <Compile Include="Objects\Asteroid.cs" />
+    <Compile Include="Objects\Bullet.cs" />
     <Compile Include="Objects\BaseObject.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Program.cs" />
@@ -76,10 +79,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="asteroid.png">
+    <Content Include="Assets\asteroid.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ship.png">
+    <Content Include="Assets\ship.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

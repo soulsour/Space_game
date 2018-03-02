@@ -11,11 +11,12 @@ namespace Space_Game
 
         public static int Width { get; set; }
         public static int Height { get; set; }
+        public static BaseObject[] _objs;
+        private static Bullet _bullet;
+        private static Asteroid[] _asteroids;
 
-        static Game()
-        {
 
-        }
+        static Game(){ }
 
         public static void Init(Form form)
         {
@@ -33,8 +34,7 @@ namespace Space_Game
 
         private static void Timer_Tick(object sender, EventArgs e)
         {
-            Draw();
-            Update();
+            Draw(); Update();
         }
 
         public static void Draw()
@@ -47,6 +47,10 @@ namespace Space_Game
             Buffer.Graphics.Clear(Color.Black);
             foreach (BaseObject obj in _objs)
                 obj.Draw();
+            
+            foreach (Asteroid obj in _asteroids)
+                obj.Draw();
+            _bullet.Draw();
             Buffer.Render();
         }
 
@@ -54,19 +58,33 @@ namespace Space_Game
         {
             foreach (BaseObject obj in _objs)
                 obj.Update();
+            foreach (Asteroid a in _asteroids)
+            {
+                a.Update();
+                if (a.Collision(_bullet)) { System.Media.SystemSounds.Hand.Play(); }
+
+            }
+            _bullet.Update();
         }
 
-        public static BaseObject[] _objs;
+        
         public static void Load()
         {
-            _objs = new BaseObject[60];
-            for (int i = 0; i < _objs.Length/3; i++)
-                _objs[i] = new Ship(new  Point(600, i * 20), new Point(- i, -i), new Size(10, 10));
-            
-            for (int i = _objs.Length / 3; i < _objs.Length/3*2; i++)
-                _objs[i] = new Star(new Point(0, i*20), new Point( - i, 0), new Size(5,5));
-            for (int i = _objs.Length/3*2; i < _objs.Length; i++)
-                _objs[i] = new Pulsar(new Point(10, i*10), new Point(-i,0), new Size(7, 7));
+            _objs = new BaseObject[30];
+            _bullet = new Bullet(new Point(0, 200), new Point(5, 0), new Size(4, 1));
+            _asteroids = new Asteroid[3];
+            var rnd = new Random();
+            for (int i = 0; i < _objs.Length; i++)
+            {
+                int r = rnd.Next(5, 50);
+                _objs[i] = new Star(new Point(1000, rnd.Next(0,Game.Height)), new Point(-r, r), new Size(3, 3));
+               
+            }
+            for (int i = 0; i < _asteroids.Length; i++)
+            {
+                int r = rnd.Next(5, 50);
+                _asteroids[i] = new Asteroid(new Point(1000, rnd.Next(0, Game.Height)), new Point(-r/5, r), new Size(r,r));
+            }
         }
     }
 }

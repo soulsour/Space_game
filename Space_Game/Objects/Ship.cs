@@ -13,7 +13,7 @@ namespace Space_Game
 
 
 
-        private Image ship = Image.FromFile("ship.png");
+        private Image ship = Image.FromFile("Assets/ship.png");
 
         public override void Draw()
         {

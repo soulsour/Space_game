@@ -7,15 +7,17 @@ namespace Space_Game
 {
         class Program
         {
-            static void Main()
+        static void Main()
+        {
+            Form form = new Form()
             {
-                Form form = new Form();
-                form.Width = 800;
-                form.Height = 600;
-
+                Width = Screen.PrimaryScreen.Bounds.Width,
+                Height = Screen.PrimaryScreen.Bounds.Height
+            };
 
             Game.Init(form);
             form.Show();
+            Game.Load();
             Game.Draw();
 
             //SplashScreen.Init(form);                                
