@@ -2,7 +2,7 @@
 
 namespace Space_Game
 {
-    interface ICollision
+    public interface ICollision
     {
         bool Collision(ICollision obj);
         Rectangle Rect { get; }

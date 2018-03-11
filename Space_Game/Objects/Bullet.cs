@@ -20,7 +20,7 @@ namespace Space_Game
 
         public override void Update()
         {
-            Pos.X=Pos.X+3;
+            Pos.X+=20;
         }
     }
 }

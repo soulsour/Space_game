@@ -4,7 +4,7 @@ using System.Drawing;
 
 namespace Space_Game
 {
-    abstract class BaseObject:ICollision
+    public abstract class BaseObject:ICollision
     {
         public delegate void Message();
         protected Point Pos;
@@ -17,6 +17,8 @@ namespace Space_Game
             Dir = dir;
             Size = size;
         }
+        public bool Collision(ICollision o) => o.Rect.IntersectsWith(this.Rect);
+        public Rectangle Rect => new Rectangle(Pos, Size);
         public abstract void Draw();
         //{
         //    Game.Buffer.Graphics.DrawImage(aster, Pos.X, Pos.Y, 60, 40);
@@ -33,7 +35,6 @@ namespace Space_Game
         //    if (Pos.Y > Game.Height) Dir.Y = -Dir.Y;
 
         //}
-        public bool Collision(ICollision o) => o.Rect.IntersectsWith(this.Rect);
-        public Rectangle Rect => new Rectangle(Pos, Size);
+        
     }
 }

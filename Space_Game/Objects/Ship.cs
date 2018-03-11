@@ -12,21 +12,19 @@ namespace Space_Game
         public static event Message MessageDie;
         private int _energy = 100;
         public int Energy => _energy;
+        private static Image ship = Image.FromFile("Assets/ship.png");
 
-        public void EnergyLow(int n)
-        {
-            _energy -= n;
-        }
+        
         public Ship(Point pos, Point dir, Size size) : base(pos, dir, size) { }
 
 
 
-        private Image ship = Image.FromFile("Assets/ship.png");
+        
 
         public override void Draw()
         {
-            //SplashScreen.Buffer.Graphics.DrawImage(ship, Pos.X + Size.Width, Pos.Y, 240, 240); 
-            Game.Buffer.Graphics.FillEllipse(Brushes.Wheat, Pos.X, Pos.Y, Size.Width, Size.Height);
+            Game.Buffer.Graphics.DrawImage(ship, Pos.X, Pos.Y, Size.Width, Size.Height);
+  
         }
         public override void Update()
         {
@@ -44,6 +42,14 @@ namespace Space_Game
         public void Die()
         {
             MessageDie?.Invoke();
+        }
+        public void EnergyUp(int n)
+        {
+            _energy += n;
+        }
+        public void EnergyLow(int n)
+        {
+            _energy -= n;
         }
     }
 }
